@@ -1,10 +1,11 @@
 
 .PHONY: FORCE all
 
-MTK_FW_VERSION ?= undefined
-ifeq ($(MTK_FW_VERSION),)
-MTK_FW_VERSION := undefined
-endif
+HM_PROJ ?= undefined
+HM_CUST ?= undefined
+HM_SW_VERNO ?= undefined
+HM_GNSS_VERNO ?= undefined
+HM_PROD ?= undefined
 
 BOARD_CONFIG ?= undefined
 
@@ -12,7 +13,7 @@ BOARD_CONFIG ?= undefined
 CFLAGS += -I$(SOURCE_DIR)/middleware/MTK/verno/inc
 
 # Pretend the symbol is undefined, to force linking it
-LDFLAGS += -u build_date_time_str -u sw_verno_str -u hw_verno_str
+LDFLAGS += -u build_date_time_str -u build_mon_and_day_str -u proj_name_str -u cust_code_str -u sw_verno_str -u gnss_verno_str -u prod_name_str -u hw_verno_str
 
 # let "all" on top to be the default target.
 all:
@@ -38,7 +39,7 @@ $(BUILD_DIR)/middleware/MTK/verno/verno.o: $(BUILD_DIR)/middleware/MTK/verno/ver
 # generate verno.c based on template.
 $(BUILD_DIR)/middleware/MTK/verno/verno.c: FORCE
 	@mkdir -p $(dir $@)
-	@$(SOURCE_DIR)/middleware/MTK/verno/gen_verno.sh $(SOURCE_DIR)/middleware/MTK/verno/verno.template $@ $(MTK_FW_VERSION) $(BOARD_CONFIG)
+	@$(SOURCE_DIR)/middleware/MTK/verno/gen_verno.sh $(SOURCE_DIR)/middleware/MTK/verno/verno.template $@ $(HM_PROJ) $(HM_CUST) $(HM_SW_VERNO) $(HM_GNSS_VERNO) $(HM_PROD) $(BOARD_CONFIG)
 
 FORCE:
 
