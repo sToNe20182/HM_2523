@@ -2,12 +2,6 @@
 #include "verno.h"
 
 char build_date_time_str[] = "$DATE";
-char build_mon_and_day_str[] = "$MON_DAY";
-char proj_name_str[] = "$PROJ_NAME";
-char cust_code_str[] = "$CUST_CODE";
-char sw_verno_str[] = "$SW_VERNO";
-char gnss_verno_str[] = "$GNSS_VERNO";
-char prod_name_str[] = "$PROD_NAME";
-
+char sw_verno_str[] = MTK_FW_VERSION;
 char hw_verno_str[] = "$HW_VERNO";
 

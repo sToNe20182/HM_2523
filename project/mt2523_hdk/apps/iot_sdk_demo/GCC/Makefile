@@ -266,8 +266,7 @@ CFLAGS += -I$(SOURCE_DIR)/driver/board/mt25x3_hdk/ept/inc
 all: cleanlog proj
 	@mkdir -p $(BUILD_DIR)
 	@$(SIZE) $(OUTPATH)/$(PROJ_NAME).elf
-	@$(SOURCE_DIR)/tools/scripts/build/copy_firmware.sh $(SOURCE_DIR) $(OUTPATH) $(IC_CONFIG) $(BOARD_CONFIG) $(PROJ_NAME).bin $(PWD)	
-	@$(SOURCE_DIR)/tools/scripts/build/HM2523_pack.sh $(SOURCE_DIR) $(OUTPATH) $(PROJ_NAME)
+	@$(SOURCE_DIR)/tools/scripts/build/copy_firmware.sh $(SOURCE_DIR) $(OUTPATH) $(IC_CONFIG) $(BOARD_CONFIG) $(PROJ_NAME).bin $(PWD)
 
 MOD_EXTRA = BUILD_DIR=$(BUILD_DIR) OUTPATH=$(OUTPATH) PROJ_PATH=$(PROJ_PATH)
 

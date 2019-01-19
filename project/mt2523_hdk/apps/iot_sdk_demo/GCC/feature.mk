@@ -6,7 +6,7 @@ MTK_SENSOR_ACCELEROMETER_USE = BMI160
 #MTK_SENSOR_MAGNETIC_USE = YAS533
 #MTK_SENSOR_BAROMETER_USE = BMP280
 #MTK_SENSOR_PROXIMITY_USE = CM36672
-#MTK_SENSOR_BIO_USE = MT2511
+MTK_SENSOR_BIO_USE = MT2511
 #MTK_SENSOR_ACCELEROMETER_USE = BMA255
 MT2511_E1 = y
 MT2511_INTERFACE = SPI
@@ -76,29 +76,6 @@ MTK_SYSTEM_AT_COMMAND_ENABLE = y
 # Development board type: EVB, HDK
 MTK_DEVELOPMENT_BOARD_TYPE = HDK
 
-
-# ==========================================
-# HM2523 VERNO CONFIG START
-# ==========================================
-
-# Project name, 2 characters
-HM_PROJ = HM2523
-
-# Customized code, 2 characters 内部使用B0开始  外部发版 A0 开始
-HM_CUST = B0
-
-# SW verno, form is "Vx.xx"
-HM_SW_VERNO = V1.00
-
-# GNSS verno, form is "Xyy", X is A~Z, y is 0~9
-HM_GNSS_VERNO = A01
-
-# Product Name, 2 characters
-HM_PROD = GD
-
-# ==========================================
-# HM2523 VERNO CONFIG END
-# ==========================================
 
 #SDK version query cmd
 MTK_QUERY_SDK_VERSION = y
